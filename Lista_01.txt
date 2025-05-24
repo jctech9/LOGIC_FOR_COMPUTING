@@ -1,0 +1,47 @@
+##_01 P ⊢ ¬¬P
+1.P	pre
+2.{~P	hip
+3. @	~e1,2}
+4. ~~P	~i2-3
+
+##_02 ¬¬P ⊢ P
+1.~~P	pre
+2.{~P	hip
+3. @	~e1,2}
+4.P	raa2-3 #~i SÓ PODE GERAR PREMISSAS NEGADAS, PORTANTO NESSE CASO USAMOS RAA
+
+##_03 A→B, A→¬B ⊢ ¬A
+1.A->B		pre
+2.A->~B		pre
+3.{A		hip
+4. B		->e1,3
+5. ~B		->e2,3
+6. @		~e4,5}
+7. ~A		~i3-6 
+
+##_04 ⊢¬(C∧¬C)
+1.{C&~C		hip
+2. C		&e1
+3. ~C		&e1
+4. @		~e2,3}
+5.~(C&~C)	~i1-4
+
+##_05 D→E, ¬E ⊢ ¬D
+1.D->E	pre
+2.~E	pre
+3.{D	hip
+4. E	->e1,3
+5. @	~e2,4}
+6.~D	~i3-5
+
+##_06 ¬¬(F∨G) ⊢ F∨G
+1.~~(F|G)	pre
+2.{~(F|G)	hip
+3. @		~e1,2}
+4. F|G		raa2-3
+
+##_07 ¬(A→B) ⊢ A∧¬B 
+1.
+
+
+
