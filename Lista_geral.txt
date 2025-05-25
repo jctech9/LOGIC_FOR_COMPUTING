@@ -80,10 +80,25 @@
 6.B->C ->i4-5
 
 #16. A ⊢ ¬¬A
+1.A         pre
+2.{~A       hip
+3. @        ~e1,2}
+4.~~A       ~i2-3     
 
 #17. ¬¬A ⊢ A
+1.~~A       pre
+2.{~A       hip
+3. @        ~e1,2}
+4.A         raa2-3    # ~i não pode ser usado para concluir A, pois ele só introduz a negação ~
+
 
 #18. A → B, ¬B ⊢ ¬A
+1.A->B         pre
+2.~B           pre
+3.{A           hip
+4. B           ->e1,3
+5. @           ~e4,2}
+6.~A           ~i3-5
 
 #19. ¬B → ¬A ⊢ A → B
 
