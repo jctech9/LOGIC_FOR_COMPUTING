@@ -39,7 +39,7 @@ Autores: Davi Romero, Paulo T. Guerra
 3. {~Q		hip
 4.  ~P		->e1,3
 5.   @		~e2,4}
-6.Q		raa3-5}
+6.Q		    raa3-5}
 7.P->Q		->i2-6
 
 #6. p → q ⊢ ¬q → ¬p
