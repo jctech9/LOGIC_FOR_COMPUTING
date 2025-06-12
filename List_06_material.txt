@@ -1,0 +1,102 @@
+#1. P, Q ⊢ P ∧ Q
+1.P	        pre
+2.Q	        pre
+3.P&Q	    &i1,2
+
+#2. P ∧ Q ⊢ Q
+1.P&Q	    pre
+2.Q	        &e1
+
+#3. P ∧ Q, R ⊢ Q ∧ R
+1.P&Q		pre
+2.R		    pre
+3.Q		    &e1
+4.Q&R		&i2,3
+
+#6. (P ∧ Q) ∧ R, S ∧ T ⊢ Q ∧ S
+1.(P&Q)&R		pre
+2.S&T			pre
+3.P&Q			&e1
+4.Q			    &e3
+5.S			    &e2
+6.Q&S			&i4,5
+
+#7. P → Q, P ⊢ Q
+1.P->Q		pre
+2.P		    pre
+3.Q		    ->e1,2
+
+#10. P, P → Q, P → (Q → R) ⊢ R
+1.P		    pre
+2.P->Q		pre
+3.P->(Q->R)	pre
+4.Q		    ->e1,2
+5.Q->R		->e3,1
+6.R		    ->e4,5
+
+#11. P → (Q → R) ⊢ P ∧ Q → R
+1.P->(Q->R)		pre
+2.{P&Q			hip
+3. P			&e2
+4. Q->R			->e1,3
+5. Q			&e2
+6. R			->e4,5}
+7.P&Q->R		->i2-6
+
+#12. P → Q ⊢ P ∧ R → Q ∧ R
+1.P->Q		pre
+2.P&R		pre
+3.P		    &e2
+4.Q		    ->e1,3
+5.R		    &e2
+6.P&R		&i3,5
+
+#13. (P ∧ Q) → R ⊢ P → (Q → R)
+1.P&Q->R		pre
+2.{P			hip
+3. {Q			hip
+4.  P&Q			&i3,2
+5.  R			->e4,1}
+6.Q->R			->i3-5}
+7.P->(Q->R)		->i2-6
+
+#14. P ∨ Q ⊢ Q ∨ P
+1.P|Q		pre
+2.{P		hip
+3. Q|P		|i2}
+4.{Q		hip
+5. Q|P		|i4}
+6.Q|P		|e1,2-3,4-5
+
+#15. Q → R ⊢ (P ∨ Q) → (P ∨ R) ####################################
+1.Q->R		pre
+2.{P|Q		pre
+3. {Q		hip
+4.  R		->e2,3}
+n.P|R}
+
+
+#16. (P ∨ Q) ∨ R ⊢ P ∨ (Q ∨ R)
+
+#17. P ∧ (Q ∨ R) ⊢ (P ∧ Q) ∨ (P ∧ R)
+
+#18. (P ∧ Q) ∨ (P ∧ R) ⊢ P ∧ (Q ∨ R)
+
+#19. ⊢ P → (Q → P)
+
+#20. ¬P ∨ Q ⊢ P → Q
+
+#21. P → Q, P → ¬Q ⊢ ¬P
+
+#22. P → (Q → R), P, ¬R ⊢ ¬Q
+
+#23. P ∧ ¬Q → R, ¬R, P ⊢ Q
+
+
+-----------------------------------
+
+#1. P→(Q→R),P→Q⊢P→R
+#2. P→Q,¬P→R,¬Q→¬R⊢Q
+#3. P∨Q,¬Q⊢P
+
+
