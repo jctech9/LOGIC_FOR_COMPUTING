@@ -1,0 +1,47 @@
+#3. P∨Q,¬Q⊢P
+
+1.P|Q	pre
+2.~Q	pre
+3.{P	hip}
+4.{Q	hip
+5. @	~e2,4
+6. P	@e5} #<---- 
+7.P	|e1,3-3,4-6
+
+
+#e. ~(P&Q) |- ~P|~Q
+
+1.~(P&Q)	    pre
+2.{~(~P|~Q)	    hip
+3. {~P          hip
+4.  ~P|~Q	    |i3
+5.  @		    ~e4,2}
+6.  P		    raa3-5
+7. {~Q		    hip
+8.  ~P|~Q	    |i7
+9.  @		    ~e8,2}
+10.  Q		    raa7-9
+11.P&Q		    &i6,10
+12.@            ~e11,1}
+13.~P|~Q	    raa2-12
+
+
+##_06 ¬¬(F∨G) ⊢ F∨G
+1.~~(F|G)	pre
+2.{~(F|G)	hip      # posso supor isso tudo
+3. @		~e1,2}
+4. F|G		raa2-3
+
+#2. P→Q,¬P→R,¬Q→¬R⊢Q
+1.P->Q		pre
+2.~P->R		pre
+3.~Q->~R	pre
+4.{~Q		hip ## para raa, logo no final da caixa tem que dá @
+5. {P		hip
+6.  Q		->e1,5
+7.  @		~e6,4}
+8.~P		~i5-7
+9.R		    ->e2,8
+10.~R		->e3,4
+11.@         ~e9,10} ##@
+12.Q		raa4-11
