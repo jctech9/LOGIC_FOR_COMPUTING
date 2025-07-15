@@ -1,0 +1,17 @@
+#1. ∀x (R(x) → S(x)), R(a) ⊢ S(a)
+
+1.Ax (R(x)->S(x))      pre
+2.R(a)                 pre
+3.R(a)->S(a)           Ae1
+4.S(a)                 ->e2,3
+
+
+#2. ∀x (U(x)), ∀x(U(x) → V(x)) ⊢ V(b)
+
+1.Ax(U(x))             pre
+2.Ax(U(x)->V(x))       pre
+3.U(b)                 Ae1
+4.U(b)->V(b)           Ae2
+
+
+#3. P(c),∀x(P(x)∧Q(x))⊢Q(c)
