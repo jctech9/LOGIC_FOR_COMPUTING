@@ -1,0 +1,46 @@
+#1. ∀x (R(x) → S(x)), R(a) ⊢ S(a)
+
+1.Ax (R(x)->S(x))      pre
+2.R(a)                 pre
+3.R(a)->S(a)           Ae1
+4.S(a)                 ->e2,3
+
+
+#2. ∀x (U(x)), ∀x(U(x) → V(x)) ⊢ V(b)
+
+1.Ax(U(x))             pre
+2.Ax(U(x)->V(x))       pre
+3.U(b)                 Ae1
+4.U(b)->V(b)           Ae2
+
+#3. P(c),∀x(P(x) ∧ Q(x)) ⊢ Q(c)
+
+1.P(c)                  pre
+2.Ax(P(x)&Q(x))         pre
+3.P(c)&Q(c)             Ae2
+4.Q(c)                  &e3 
+
+#4. #∀x(A(x)→B(x)),∀x(B(x)→C(x)) ⊢ ∀x(A(x)→C(x))
+
+1.Ax(A(x)->B(x))	pre
+2.Ax(B(x)->C(x))	pre
+3.{x0
+4. {A(x0)		    hip
+5. A(x0)->B(x0)		Ae1
+6. B(x0)		    ->e4,5
+7. B(x0)->C(x0)		Ae2
+8. C(x0)		    ->e6,7}
+9. A(x0)->C(x0)		->i4-8}
+10.Ax(A(x)->C(x))	Ai3-9
+
+#5. ∀xP(x),∀xQ(x) ⊢ ∀x(P(x)∧Q(x))
+
+1.AxP(x)            pre
+2.AxQ(x)            pre
+3.{x0
+4. P(x0)            Ae1
+5. Q(x0)            Ae2
+6. P(x0) & Q(x0)    &i4,5}
+7.Ax(P(x) & Q(x))   Ai3-6
+
+#6. ∀x(H(x)∨J(x)),∀x(¬J(x))⊢∀xH(x)

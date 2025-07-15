@@ -17,3 +17,9 @@
 5. P(x0)			    Ae2
 6. Q(x0)			    ->e4,5}
 7.Ax Q(x)			    Ai3-6
+
+#----------------∃-INTRODUÇÃO--------------------
+#Exemplo Base: ∀xP(x) ⊢ ∃xP(x)
+
+1.AxP(x)       pre
+2.ExP(x)       Ei2 
