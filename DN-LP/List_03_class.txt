@@ -1,0 +1,4 @@
+#1. ∀x(Q(x) → R(x)), ∃x(P(x) ∧ Q(x)) ⊢ ∃x(P(x) ∧ R(x))
+#2. ∃xP(x), ∀x∀y(P(x) → Q(y)) ⊢ ∀y Q(y)
+#3. ∃x¬P(x) ⊢ ¬∀xP(x)
+#4. ¬∀xP(x) ⊢ ∃x¬P(x)

@@ -44,3 +44,14 @@
 7.Ax(P(x) & Q(x))   Ai3-6
 
 #6. ∀x(H(x)∨J(x)),∀x(¬J(x))⊢∀xH(x)
+
+
+#7. (c), ∀x(B(x)→C(x)) ⊢ C(c)
+
+1.B(c)		   pre
+2.Ax(B(x) -> C(x)) pre
+3.B(c) -> C(c)     pre
+4.C(c)		   ->e1,3
+
+
+∀x(E(x)→M(x)), ∀xE(x) ⊢ ∀xM(x)

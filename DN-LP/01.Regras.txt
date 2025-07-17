@@ -22,4 +22,5 @@
 #Exemplo Base: ∀xP(x) ⊢ ∃xP(x)
 
 1.AxP(x)       pre
-2.ExP(x)       Ei2 
+2.P(x0)	       Ae1
+3.ExP(x)       Ei2
