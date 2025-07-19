@@ -2,3 +2,24 @@
 #2. ∃xP(x), ∀x∀y(P(x) → Q(y)) ⊢ ∀y Q(y)
 #3. ∃x¬P(x) ⊢ ¬∀xP(x)
 #4. ¬∀xP(x) ⊢ ∃x¬P(x)
+
+
+
+#-------------- moodle ----------------------
+#1. ∀x(P(x)→R(x)),∃x(P(x)∧Q(x)) ⊢ ∃xR(x)
+
+1.Ax(P(x)->R(x))      pre
+2.Ex(P(x)&Q(x))       pre
+3.{x1 P(x1) & Q(x1)   hip	# hip= tem que ser toda a premissa do (E)
+4. P(x1)->R(x1)	      Ae1   # tem que ser no escopo da variavel x1
+5. P(x1)	          &e3
+6. R(x1)	          ->e4,5
+7. ExR(x)	          Ei6}
+8.ExR(x)	          Ee2,3-7 
+
+
+#2. ∀x(H(x)∨M(x)),¬∃xH(x) ⊢ ∀xM(x)
+
+1.Ax(H(x) | M(x))      pre
+2.~ExH(x)              pre
+3.
