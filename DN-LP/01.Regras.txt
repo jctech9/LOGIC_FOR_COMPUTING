@@ -24,3 +24,14 @@
 1.AxP(x)       pre
 2.P(x0)	       Ae1
 3.ExP(x)       Ei2
+
+#----------------∃-ELIMINAÇÃO--------------------
+#Exemplo Base: ∀x(P(x) → Q(x)), ∃xP(x) ⊢ ∃xQ(x)
+
+1.Ax(P(x) -> Q(x))		pre
+2.ExP(x)			    pre
+3.{x0 P(x0)			    hip
+4. P(x0) -> Q(x0)		Ae1
+5. Q(x0)			   ->e4,3
+6. ExQ(x)			   Ei5}
+7.ExQ(x)			   Ee2,3-6 # ∃ que foi eliminado foi o da linha 2
