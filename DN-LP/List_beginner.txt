@@ -1,0 +1,94 @@
+
+
+=== Nível 1: Básico (Regras isoladas) ===
+#1. ∃xP(x) ⊢ ∃xP(x)
+1.ExP(x)       pre
+2.{x1 P(x1)    hip
+3. ExP(x)      Ei2}
+4.ExP(x)       Ee1,2-3
+
+#2. ∀x P(x) ⊢ P(t)  
+1.Ax P(x)      pre
+2.P(t)         Ae1
+
+
+#3. ∀x (Q(x) → R(x)), ∀x Q(x) ⊢ ∀x R(x)
+1. Ax (Q(x) -> R(x))        pre
+2. Ax Q(x)                  pre
+3. {x1
+4.  Q(x1) -> R(x1)           Ae1
+5.  Q(x1)                    Ae2
+6.  R(x1)                    ->e4,5}
+7.Ax R(x)                    Ai3-6
+
+
+#4. ∃x P(x), ∀x (P(x) → Q(x)) ⊢ ∃x Q(x)
+1. Ex P(x)            pre
+2. Ax (P(x) -> Q(x))  pre
+3.{x1 P(x1)           hip # deve ser P, pois P está ao lado do (∃)
+4. P(x1) -> Q(x1)     Ae2
+5. Q(x1)              ->e3,4
+6. Ex Q(x)            Ei5}
+7.Ex Q(x)             Ee1,3-6
+
+=== Nível 2: Intermediário (Combinação simples) ===
+#5. ∀x P(x) ⊢ ∃x P(x)
+
+1.Ax P(x)         pre
+2.P(x1)           Ae1
+3.Ex P(x)         Ei2
+
+#6. ∀x (P(x) → Q(x)), ∀x P(x) ⊢ ∀x Q(x)
+
+1.Ax (P(x) -> Q(x))      pre
+2.Ax P(x)                pre
+3.{x0
+4. P(x0) -> Q(x0)         Ae1
+5. P(x0)                  Ae2
+6. Q(x0)                  ->e4,5}
+7.Ax Q(x)                 Ai3-6
+
+#7. ∃x P(x), ∀x (P(x) → ¬Q(x)) ⊢ ∃x ¬Q(x)
+
+1.Ex P(x)            pre
+2.Ax (P(x) -> ~Q(x)) pre
+3.{x1 P(x1)          hip
+4. P(x1) -> ~Q(x1)   Ae2
+5. ~Q(x1)            ->e3,4
+6. Ex~Q(x)           Ei5}
+7.Ex~Q(x)            Ee1,3-6
+
+#8. R(a, b) ⊢ ∃x R(x, b)   [R é relação binária]
+
+1. R(a, b)         pre
+2. ExR(x, b)       Ei1 # não precisa de uma variavel qualquer
+
+=== Nível 3: Intermediário-Avançado (Múltiplos quantificadores) ===
+#9. ∀x ∀y R(x,y) ⊢ ∀y ∀x R(x,y)
+
+1. Ax Ay R(x,y)      pre
+2. {y1
+3.  {x1
+4.   Ay R(x1,y)		   Ae1
+5.   R(x1,y1)		   Ae4}
+6.  Ax R(x,y1)		   Ai3-5} # cada variavel por vez !- introdução de x
+7.Ay Ax R(x,y)		   Ai2-6  # depois introdução de y
+
+#10. ∀x (P(x) → Q(x)), P(a) ⊢ ∃x Q(x)
+
+1.Ax (P(x) -> Q(x))		pre
+2.P(a)				    pre   # não preciso abrir caixa com "a" ela já é fornecida na linha 2
+3.P(a) -> Q(a)			Ae1
+4.Q(a)				    ->e3,2
+5.ExQ(x)			    Ei4
+
+
+11. ∃x P(x), ∃x Q(x), ∀x (P(x) ∧ Q(x) → R(x)) ⊢ ∃x R(x)
+12. ∀x (P(x) → Q(x)), ∀x (Q(x) → R(x)) ⊢ ∀x (P(x) → R(x))
+
+=== Nível 4: Avançado (Estruturas complexas) ===
+13. ∀x (P(x) → ¬Q(x)), ∃x P(x) ⊢ ¬∀x Q(x)
+14. ∃x (P(x) ∧ Q(x)), ∀x (Q(x) → R(x)) ⊢ ∃x (P(x) ∧ R(x))
+15. ∀x ∀y (P(x) → Q(y)) ⊢ ∀y ∀x (P(x) → Q(y))
+16. ∃x P(x), ∀x (P(x) → ∀y R(x,y)) ⊢ ∀y ∃x R(x,y)
+
