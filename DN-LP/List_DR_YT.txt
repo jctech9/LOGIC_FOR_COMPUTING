@@ -30,6 +30,8 @@
 6. @			Ee1,3-5}
 7. ~Ax~P(x)		~i2-6
 
-#4. ¬∀x ¬P(x) ⊢ ∃x P(x) #hard
+#4. ¬∀x ¬P(x) ⊢ ∃x P(x) 
+
+https://www.youtube.com/watch?v=LQBFebPpk4Y&list=PLfOnKvd6pFiq_BUI-llPhDeGR55P6nHfr&index=133
 
 
