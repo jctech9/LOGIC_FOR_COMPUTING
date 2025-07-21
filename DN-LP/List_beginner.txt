@@ -83,7 +83,20 @@
 5.ExQ(x)			    Ei4
 
 
-11. ∃x P(x), ∃x Q(x), ∀x (P(x) ∧ Q(x) → R(x)) ⊢ ∃x R(x)
+#11. ∃x P(x), ∃x Q(x), ∀x (P(x) ∧ Q(x) → R(x)) ⊢ ∃x R(x)
+
+1.Ex P(x)			pre
+2.Ex Q(x)			pre
+3.Ax (P(x) & Q(x) -> R(x))	pre
+4.{x1
+5. (P(x1) & Q(x1)) -> R(x1)	Ae1
+6. ................................
+
+}
+
+n.R(x1)
+
+
 12. ∀x (P(x) → Q(x)), ∀x (Q(x) → R(x)) ⊢ ∀x (P(x) → R(x))
 
 === Nível 4: Avançado (Estruturas complexas) ===
