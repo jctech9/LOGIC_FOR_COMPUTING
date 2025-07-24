@@ -1,57 +1,103 @@
-
-#-------------slides-----------------
+--------------------------slides--------------------------------------
 #1. ∀x(Q(x) → R(x)), ∃x(P(x) ∧ Q(x)) ⊢ ∃x(P(x) ∧ R(x))
-
-1.Ax(Q(x) -> R(x))		pre
-2.Ex(P(x) & Q(x))		pre
-3.{x0 P(x0) & Q(x0)     hip
-4. Q(x0)                &e3
-5. Q(x0) -> R(x0)       Ae1
-6. R(x0)                ->e4,5
-7. P(x0)                &e3
-8. P(x0) & R(x0)        &i6,7
-9. Ex(P(x) & R(x))      Ei8}
-10.Ex(P(x) & R(x))      Ee2,3-9
+1.Ax(Q(x) -> R(x))               pre
+2.Ex(P(x) & Q(x))                pre
+3.{ a P(a) & Q(a)                hip
+4.  Q(a) -> R(a)                 Ae1
+5.  Q(a)                         &e3
+6.  R(a)                         ->e4,5
+7.  P(a)                         &e3
+8.  P(a)&R(a)                    &i7,6
+9.  Ex(P(x)&R(x))                Ei8}
+10.Ex(P(x)&R(x))                 Ee2,3-9
 
 #2. ∃xP(x), ∀x∀y(P(x) → Q(y)) ⊢ ∀y Q(y)
+1.ExP(x)                         pre
+2.AxAy(P(x) -> Q(y))             pre
+3.{y0                            
+4. {x0        P(x0)              hip
+5.  Ay(P(x0) -> Q(y))            Ae2
+6.  P(x0) -> Q(y0)               Ae5
+7.  Q(y0)                        ->e4,6}
+8.  Q(y0)                        Ee1,4-7}
+9.Ay Q(y)                        Ai3-8
+
 #3. ∃x¬P(x) ⊢ ¬∀xP(x)
+1. Ex~P(x)                       pre
+2.{AxP(x)                        hip
+3. {a ~P(a)                      hip    
+4.     P(a)                      Ae2
+5.     @                         ~e3,4}
+6.@                              Ee1,3-5}
+7.~AxP(x)                        ~i2-6
+
 #4. ¬∀xP(x) ⊢ ∃x¬P(x)
+1.~AxP(x)                        pre
+2.{~Ex~P(x)                      hip
+3. {a
+4. {~P(a)                        hip
+5.   Ex~P(x)                     Ei4
+6.   @                           ~e 5,2}
+7.   P(a)                        raa4-6}
+8.   AxP(x)                      Ai 3-7
+9.@                              ~e8,1}
+10.Ex~P(x)                       raa2-9
 
-
-
-#-------------- moodle questôes ----------------------
+------------------------------moodle----------------------------------
 #1. ∀x(P(x)→R(x)),∃x(P(x)∧Q(x)) ⊢ ∃xR(x)
-
-1.Ax(P(x)->R(x))      pre
-2.Ex(P(x)&Q(x))       pre
-3.{x1 P(x1) & Q(x1)   hip	# hip= tem que ser toda a premissa do (E)
-4. P(x1)->R(x1)	      Ae1   # tem que ser no escopo da variavel x1
-5. P(x1)	          &e3
-6. R(x1)	          ->e4,5
-7. ExR(x)	          Ei6}
-8.ExR(x)	          Ee2,3-7 
-
+1. Ax(P(x)->R(x))                pre
+2. Ex(P(x) & Q(x))               pre
+3. {a P(a) & Q(a)                hip
+4.  P(a)->R(a)                   Ae1
+5.  P(a)                         &e3
+6.  R(a)                         ->e4,5
+7.  ExR(x)                       Ei6}
+8.ExR(x)                         Ee2,3-7
 
 #2. ∀x(H(x) ∨ M(x)), ¬∃xH(x) ⊢ ∀xM(x)
+1. Ax(H(x) | M(x))              pre
+2. ~ExH(x)                      pre
+3. {a 
+4.  H(a) | M(a)                  Ae1
+5.  {H(a)                        hip
+6.   ExH(x)                      Ei5
+7.   @                           ~e2,6
+8.   M(a)                        @e7}
+9.   {M(a)                       hip}
+10. M(a)                         |e4,5-8,9-9}
+11.AxM(x)                        Ai3-10
 
-1.Ax(H(x) | M(x))      pre
-2.~ExH(x)              pre
-3.{x0                   
-4. H(x0) | M(x0)        Ae1
-5.  {H(x0)              hip
-6.   {~M(x0)            hip
-7.    ExH(x)            Ei5
-8.    @                 ~e7,2}
-9.M(x0)                  raa6-8}
-10.  {M(x0)             hip}
-11.M(x0)                |e4,5-9,10-10}
-12.AxM(x)               Ai 3-11
-
-
-#3. ⊢∃x(P→Q(x))→(P→∃xQ(x))
-
+#3. ⊢ ∃x(P→Q(x))→(P→∃xQ(x))
+1.{Ex(P->Q(x))                    hip
+2. {P                             hip
+3.   {a P->Q(a)                   hip
+4.    Q(a)                        ->e2,3
+5.    ExQ(x)                      Ei4}
+6.  ExQ(x)                        Ee1,3-5}
+7.P->ExQ(x)                       ->i2-6}
+8.Ex(P->Q(x))->P->ExQ(x) ->i1-7
 
 #4. ∀x(¬M(x)→¬H(x))⊢∀x(H(x)→M(x))
-
+1.Ax(~M(x)->~H(x))                pre
+2.{a                                      
+3. {a H(a)                         hip       
+4.  {~M(a)                         hip      
+5.   ~M(a)->~H(a)                  Ae1
+6.         ~H(a)                   ->e4,5
+7.          @                      ~e6,3}      
+8.  M(a)                           raa4-7}     
+9.H(a)->M(a)                       ->i3-8 }    
+10.Ax(H(x)->M(x))                  Ai2-9        
 
 #5. ∀x(¬H(x)∨M(x))⊢∀x(¬M(x)→¬H(x))
+1.Ax(~H(x) | M(x))                pre
+2.{a                                        
+3. {~M(a)                        hip     
+4.  ~H(a) | M(a)                 Ae1
+5.  {~H(a)                       hip}
+6.  {M(a)                        hip                        
+7.   @                           ~e3,6
+8.   ~H(a)                        @e7}
+9. ~H(a)                        |e4,5-5,6-8}
+10.~M(a)->~H(a)                 ->i3-9}
+11.Ax(~M(x)->~H(x))              Ai2-10        
